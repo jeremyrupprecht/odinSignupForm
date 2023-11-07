@@ -136,18 +136,18 @@ input:focus::placeholder {
     color: transparent;
 }
 
-.phone-note {
+.formatting-note {
     position: absolute;
     font-size: 0.7em;
     visibility: hidden;
     top: -15px;
-    left: 62px;
+    left: 80px;
 }
 
-input[type="tel"]:focus + div + div {
+input[type="tel"]:focus + div + div, 
+input[type="password"]:focus + div + div {
     visibility: visible;
 }
-
 
     /* Text animations */
 
@@ -166,7 +166,7 @@ input[type="tel"]:focus + div + div {
     transition-duration: 0.1s;
 }
 
-form input:focus + div {
+input:focus + div {
     visibility: visible;
     transform: translateX(3px) translateY(-19px);
     font-size: 0.80em;
@@ -176,11 +176,11 @@ form input:focus + div {
 }
 
 
-form input:focus:valid + div {
+input:focus:valid + div {
     background-color: green;
 }
 
-form input:focus:invalid + div {
+input:focus:invalid + div {
     background-color: red;
 }
 

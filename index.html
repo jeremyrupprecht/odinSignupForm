@@ -46,18 +46,21 @@
                         <input type="tel" name="phone" placeholder="Phone *" required 
                         pattern="[0-9]{10}|([0-9]{3}(-| |.)[0-9]{3}(-| |.)[0-9]{4})">
                         <div class="focus-text">Phone</div>
-                        <div class="phone-note">Format: 123-456-7890</div>
+                        <div class="formatting-note">Format: 123-456-7890</div>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="input-container">
-                        <input type="password" name="password" placeholder="Password *" required>
+                        <input type="password" name="password" placeholder="Password *" required
+                        pattern="[0-9a-zA-Z]{8,}">
                         <div class="focus-text">Password</div>
+                        <div class="formatting-note">Minimum 8 characters</div>
                     </div>
                     <div class="gap"></div>
                     <div class="input-container">
-                        <input type="password" name="confirmpassword" placeholder="Confirm Password *" required>
+                        <input type="password" name="confirmpassword" placeholder="Confirm Password *" required
+                        pattern="[0-9a-zA-Z]{8,}">
                         <div class="focus-text">Confirm Password</div>
                     </div>
                 </div>

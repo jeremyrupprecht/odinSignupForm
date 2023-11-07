@@ -31,6 +31,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .img-container h1 {
@@ -39,14 +40,22 @@ html {
     margin-top: 2%;
 }
 
-img {
+h1 + img {
     margin-top: auto;
     width: min(500px, 90%);
 }
 
+p + img {
+    width: 30px;
+    margin-bottom: 10px;
+    visibility: hidden;
+    position: absolute;
+    top: 94%;
+}
+
 img + p {
     margin-top: auto;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
 .form-container {
@@ -182,6 +191,13 @@ form input:focus:invalid + div {
         width: 100%;
     }
 
+    p + img {
+        visibility: visible;
+        animation-name: backandforth;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
     .form-container {
         width: 100%;
         padding-left: 0%;
@@ -201,5 +217,19 @@ form input:focus:invalid + div {
 
     .form-row {
         justify-content: center;
+    }
+}
+
+@keyframes backandforth {
+    0%{
+        top: 94%;
+    }
+
+    50%{
+        top: 95%;
+    }
+
+    100%{
+        top: 94%;
     }
 }

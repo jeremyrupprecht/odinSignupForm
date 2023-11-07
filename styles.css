@@ -2,7 +2,7 @@
 :root {
     --lightblue: rgb();
     --darkblue: rgb(23, 79, 199); 
-    --gray: rgb(32, 32, 32);
+    --gray: rgb(15, 15, 15);
 }
 
 * {
@@ -10,7 +10,12 @@
     padding: 0;
     /* scroll-behavior: smooth; */
     font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+}
 
+/* background extends when scrolling */
+html {
+ background-color: var(--gray);
 }
 
 .page-split {
@@ -26,17 +31,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
 }
 
 .img-container h1 {
     margin-right: auto;
     margin-left: 3%;
-    margin-top: 3%;
+    margin-top: 2%;
 }
 
 img {
     margin-top: auto;
+    width: min(500px, 90%);
 }
 
 img + p {
@@ -44,14 +49,63 @@ img + p {
     margin-bottom: 5%;
 }
 
-form {
+.form-container {
     height: 100vh;
     width: calc(60%);
     background-color: var(--gray);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5%;
 }
 
-@media only screen and (max-width: 540px) {
-    form {
+form {
+    width: 100%;
+}
+
+form h1 {
+    font-size: 2.5em;
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+form .form-row {
+    margin-bottom: 50px;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid white; */
+    width: 65%;
+}
+
+form input {
+    background-color: transparent;
+    /* margin-right: 150px; */
+    height: 40px;
+    width: 200px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+    font-size: 1.1em;
+}
+
+.gap {
+    flex: 1 0 20px;
+}
+
+form button {
+    height: 50px;
+    width: 250px;
+    background-color: var(--darkblue);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-top: 50px;
+}
+
+@media only screen and (max-width: 800px) {
+    .form-container {
         background-color: white;
     }
 

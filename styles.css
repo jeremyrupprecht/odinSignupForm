@@ -51,7 +51,7 @@ img + p {
 
 .form-container {
     height: 100vh;
-    width: calc(60%);
+    width: calc(55%);
     background-color: var(--gray);
     display: flex;
     justify-content: flex-start;
@@ -76,7 +76,7 @@ form .form-row {
     display: flex;
     justify-content: space-between;
     /* border: 1px solid white; */
-    width: 65%;
+    width: 60%;
 }
 
 form input {
@@ -87,7 +87,7 @@ form input {
     border: none;
     outline: none;
     border-bottom: 1px solid gray;
-    font-size: 1.1em;
+    padding: 0px 5px;
 }
 
 .gap {
@@ -104,9 +104,80 @@ form button {
     margin-top: 50px;
 }
 
+/* Validation Styling */
+
+    /* Basic Outlines  */
+
+form input:focus {
+    border-radius: 4px;
+}
+
+form input:focus:valid {
+    border: 1px solid green;
+}
+
+form input:focus:invalid {
+    border: 1px solid red;
+}
+
+form input:not(:focus):not(:placeholder-shown):valid {
+    border-bottom: 1px solid green;
+}
+
+form input:not(:focus):not(:placeholder-shown):invalid {
+    border-bottom: 1px solid red;
+}
+
+form input:focus::placeholder {
+    color: transparent;
+}
+
+    /* Text animations */
+
+form .input-container {
+    position: relative;
+}
+    
+.focus-text {
+    visibility: hidden;
+    position: absolute;
+    top: 5px;
+    color: gray;
+    font-size: 0.9em;
+    border-radius: 2px;
+    padding: 4px;
+    transition-duration: 0.1s;
+}
+
+form input:focus + div {
+    visibility: visible;
+    transform: translateX(3px) translateY(-19px);
+    font-size: 0.80em;
+    padding: 1px 4px;
+    transition-duration: 0.3s;
+    color: white;
+}
+
+
+form input:focus:valid + div {
+    background-color: green;
+}
+
+form input:focus:invalid + div {
+    background-color: red;
+}
+
+
+
 @media only screen and (max-width: 800px) {
     .form-container {
         background-color: white;
     }
+
+}
+
+/* Animation */
+
+@keyframes slide {
 
 }

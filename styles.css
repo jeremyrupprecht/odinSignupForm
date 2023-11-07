@@ -20,7 +20,7 @@ html {
 
 .page-split {
     display: flex;
-    overflow: wrap;
+    flex-wrap: wrap;
 }
 
 .img-container {
@@ -167,17 +167,14 @@ form input:focus:invalid + div {
     background-color: red;
 }
 
-
-
 @media only screen and (max-width: 800px) {
-    .form-container {
-        background-color: white;
+    
+    .img-container {
+        width: 100%;
     }
 
-}
-
-/* Animation */
-
-@keyframes slide {
-
+    .form-container {
+        width: 100%;
+        justify-content: center;
+    }
 }

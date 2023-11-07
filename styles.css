@@ -104,33 +104,46 @@ form button {
 
     /* Basic Outlines  */
 
-form input:focus {
+input:focus {
     border-radius: 4px;
 }
 
-form input:focus:valid {
+input:focus:valid {
     border: 1px solid green;
 }
 
-form input:focus:invalid {
+input:focus:invalid {
     border: 1px solid red;
 }
 
-form input:not(:focus):not(:placeholder-shown):valid {
+input:not(:focus):not(:placeholder-shown):valid {
     border-bottom: 1px solid green;
 }
 
-form input:not(:focus):not(:placeholder-shown):invalid {
+input:not(:focus):not(:placeholder-shown):invalid {
     border-bottom: 1px solid red;
 }
 
-form input:focus::placeholder {
+input:focus::placeholder {
     color: transparent;
 }
 
+.phone-note {
+    position: absolute;
+    font-size: 0.7em;
+    visibility: hidden;
+    top: -15px;
+    left: 62px;
+}
+
+input[type="tel"]:focus + div + div {
+    visibility: visible;
+}
+
+
     /* Text animations */
 
-form .input-container {
+.input-container {
     position: relative;
 }
     
